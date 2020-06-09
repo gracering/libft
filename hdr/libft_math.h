@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -541,6 +546,10 @@ t_int		ft_distance_int(t_int x, t_int y);
 	#define FLOAT_MANTISSA_SIGNED	F128_MANTISSA_SIGNED
 	#define FLOAT_MANTISSA_BITS		F128_MANTISSA_BITS
 	#define FLOAT_INIT_VALUE		F128_INIT_VALUE
+#endif
+
+#ifdef __cplusplus
+} // extern "C"
 #endif
 
 #endif

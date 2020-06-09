@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                  Macros                                    *|
@@ -205,5 +210,9 @@ t_u32	ft_strarrcount_charset(char const **strarr, char const *cset);
 **	Counts the number of occurences of the string 'query' in strarr.
 */
 t_u32	ft_strarrcount_str(char const **strarr, char const *query);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

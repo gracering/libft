@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -76,5 +81,10 @@ t_u32		ft_random_0_to_n(t_u32 n);
 t_int		ft_random_int_a_to_b(t_int a, t_int b);
 t_float		ft_random_float_0_to_1(void);
 t_float		ft_random_float_a_to_b(t_float a, t_float b);
+
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

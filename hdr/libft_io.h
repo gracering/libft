@@ -22,6 +22,11 @@
 #include "libft.h"
 #include "libft_string.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -194,5 +199,9 @@ void	ft_output_strls(char const** strls);
 **	writing lines of 'cols' columns of 4-byte chunks.
 */
 void	ft_output_memory(t_u8 const* ptr, t_size n, t_u8 cols);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

@@ -40,7 +40,10 @@
 #include <stddef.h>
 #include <inttypes.h>
 
-
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 /*
 ** ************************************************************************** *|
@@ -267,5 +270,9 @@ typedef union		u_varfloat_
 	t_f32			f;
 	t_f64			lf;
 }					u_varfloat;
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

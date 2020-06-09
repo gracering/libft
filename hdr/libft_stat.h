@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -200,5 +205,9 @@ void				ft_stat_free_pmf(s_prob_mass *drv);
 s_list_int			ft_stat_ilst_to_iset(s_list_int const ilst);
 t_u32				ft_stat_ilst_count(s_list_int ilst, t_int elem);
 s_prob_mass			ft_stat_ilst_to_pmf(s_list_int const ilst);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

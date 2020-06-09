@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -165,5 +170,9 @@ char	ft_toupper(char c);
 **	(nothing is done if 'c' is not a letter character).
 */
 char	ft_tolower(char c);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

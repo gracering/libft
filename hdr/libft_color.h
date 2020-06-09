@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -156,5 +161,9 @@ t_u32	ft_color_argb32_set(t_u8 a, t_u8 r, t_u8 g, t_u8 b);
 **	Converts the given 32-bit color value to its 16-bit equivalent (rounding down values)
 */
 t_u16	ft_color_argb32_to_argb16(t_u32 color);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

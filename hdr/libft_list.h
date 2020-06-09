@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -207,5 +212,9 @@ void				**ft_lst_to_array(s_list **alst);
 **	Returns NULL if any elements of '*alst' are of unequal 'lst->item_size'.
 */
 s_tuple				*ft_lst_to_tuple(s_list **alst, s_tuple *tuple);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif
