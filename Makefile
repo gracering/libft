@@ -9,7 +9,7 @@ CC_LIN	= g++
 CC_MAC	= gcc
 
 # Compiler flags
-CFLAGS	=	-Wall -Wextra -Winline -Wpedantic -Werror $(CFLAGS_PLATFORM) -MMD -O2
+CFLAGS	=	-Wall -Wextra -Winline $(CFLAGS_PLATFORM) -MMD -O2 -fms-extensions
 
 CFLAGS_PLATFORM = _
 CFLAGS_WIN	= -mwindows
