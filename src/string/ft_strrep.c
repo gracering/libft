@@ -16,13 +16,13 @@
 
 
 
-char		*ft_strrep_char(char const *str, char const old, char const new)
+char		*ft_strrep_char(char const *str, char const old, char const newchar)
 {
 	char	*result;
 	t_size	i;
 
 #if LIBFTCONFIG_HANDLE_NULLPOINTERS
-	if (old == new)
+	if (old == newchar)
 		return (ft_strdup(str));
 	if (str == NULL)
 		return (NULL);
@@ -37,7 +37,7 @@ char		*ft_strrep_char(char const *str, char const old, char const new)
 	i = 0;
 	while (str[i])
 	{
-		result[i] = (str[i] == old) ? new : str[i];
+		result[i] = (str[i] == old) ? newchar : str[i];
 		++i;
 	}
 	result[i] = '\0';
@@ -46,7 +46,7 @@ char		*ft_strrep_char(char const *str, char const old, char const new)
 
 
 
-char		*ft_strrep_charset(char const *str, char const *old, char const *new)
+char		*ft_strrep_charset(char const *str, char const *old, char const *newcharset)
 {
 	char	*result;
 	t_size	i;
@@ -54,12 +54,12 @@ char		*ft_strrep_charset(char const *str, char const *old, char const *new)
 	int		c_index;
 
 #if LIBFTCONFIG_HANDLE_NULLPOINTERS
-	if (old == new)
+	if (old == newcharset)
 		return (ft_strdup(str));
-	if (str == NULL || old == NULL || new == NULL)
+	if (str == NULL || old == NULL || newcharset == NULL)
 		return (NULL);
 #endif
-	if (ft_strlen(old) != ft_strlen(new))
+	if (ft_strlen(old) != ft_strlen(newcharset))
 		return (NULL);
 	i = 0;
 	while (old[i])
@@ -76,7 +76,7 @@ char		*ft_strrep_charset(char const *str, char const *old, char const *new)
 	while (str[i])
 	{
 		if ((c_index = ft_strichr(old, str[i])) >= 0)
-			result[i] = new[c_index];
+			result[i] = newcharset[c_index];
 		++i;
 	}
 	result[i] = '\0';
@@ -85,26 +85,26 @@ char		*ft_strrep_charset(char const *str, char const *old, char const *new)
 
 
 
-char		*ft_strrep_str(char const *str, char const *old, char const *new)
+char		*ft_strrep_str(char const *str, char const *old, char const *newstring)
 {
 	char	*result;
 	char	**strarr;
 
 #if LIBFTCONFIG_HANDLE_NULLPOINTERS
-	if (old == new)
+	if (old == newstring)
 		return (ft_strdup(str));
-	if (str == NULL || old == NULL || new == NULL)
+	if (str == NULL || old == NULL || newstring == NULL)
 		return (NULL);
 #endif
 	strarr = ft_strsplit_str(str, old);
-	result = ft_strarrjoin((const char **)strarr, new);
+	result = ft_strarrjoin((const char **)strarr, newstring);
 	ft_strarrdel(&strarr);
 	return (result);
 }
 
 
 
-void		ft_strrep_char_inplace(char *str, char const old, char const new)
+void		ft_strrep_char_inplace(char *str, char const old, char const newchar)
 {
 	t_size	i;
 
@@ -118,24 +118,24 @@ void		ft_strrep_char_inplace(char *str, char const old, char const new)
 	while (str[i])
 	{
 		if (str[i] == old)
-			str[i] = new;
+			str[i] = newchar;
 		++i;
 	}
 }
 
 
 
-void		ft_strrep_charset_inplace(char *str, char const *old, char const *new)
+void		ft_strrep_charset_inplace(char *str, char const *old, char const *newchar)
 {
 	t_size	i;
 	t_size	j;
 	int		c_index;
 
 #if LIBFTCONFIG_HANDLE_NULLPOINTERS
-	if (str == NULL || old == NULL || new == NULL)
+	if (str == NULL || old == NULL || newchar == NULL)
 		return ;
 #endif
-	if (ft_strlen(old) != ft_strlen(new))
+	if (ft_strlen(old) != ft_strlen(newchar))
 		return ;
 	i = 0;
 	while (old[i])
@@ -150,17 +150,17 @@ void		ft_strrep_charset_inplace(char *str, char const *old, char const *new)
 	while (str[i])
 	{
 		if ((c_index = ft_strichr(old, str[i])) >= 0)
-			str[i] = new[c_index];
+			str[i] = newchar[c_index];
 		++i;
 	}
 }
 
 
 
-void	ft_strrep_str_inplace(char **a_str, char const *old, char const *new)
+void	ft_strrep_str_inplace(char **a_str, char const *old, char const *newstring)
 {
 	char	*tmp;
-	tmp = ft_strrep_str(*a_str, old, new);
+	tmp = ft_strrep_str(*a_str, old, newstring);
 	ft_strdel(a_str);
 	*a_str = tmp;
 }

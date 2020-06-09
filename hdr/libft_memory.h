@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -143,7 +148,7 @@ void	*ft_memchr(void const *ptr, t_u8 byte, t_size n);
 **	Iterates through 'n' bytes of memory starting at 'ptr', replacing every
 **	byte equal to 'old' with the value 'new' instead.
 */
-void	ft_memrep(void *ptr, t_u8 old, t_u8 new, t_size n);
+void	ft_memrep(void *ptr, t_u8 old, t_u8 newval, t_size n);
 
 /*
 **	Compares 'n' bytes of memory at 'ptr1' and 'ptr2',
@@ -184,5 +189,9 @@ void	*ft_ptrarrnew(t_size size);
 ** Returns the length of a null-terminated pointer array.
 */
 t_u32	ft_ptrarrlen(const void **a_ptrarr);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

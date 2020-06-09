@@ -21,6 +21,11 @@
 
 #include "libft.h"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 /*
 ** ************************************************************************** *|
 **                                    Macros                                  *|
@@ -338,7 +343,7 @@ char	*ft_strtoescape(char const *str);
 //TODO implement
 char	*ft_strrep_char(char const *str,
 	char const old,
-	char const new);
+	char const newchar);
 
 /*
 **	Returns a new null-terminated string which is a copy of 'str',
@@ -348,7 +353,7 @@ char	*ft_strrep_char(char const *str,
 //TODO implement
 char	*ft_strrep_charset(char const *str,
 	char const *old,
-	char const *new);
+	char const *newcharset);
 
 /*
 **	Returns a new null-terminated string which is a copy of 'str',
@@ -357,7 +362,7 @@ char	*ft_strrep_charset(char const *str,
 */
 char	*ft_strrep_str(char const *str,
 	char const *old,
-	char const *new);
+	char const *newstring);
 
 
 /*
@@ -396,7 +401,7 @@ char		*ft_strinsert_inplace(char **dest, char const *src, t_u32 index);
 */
 void		ft_strrep_char_inplace(char *str,
 	char const old,
-	char const new);
+	char const newchar);
 
 /*
 **	Replaces 'old' charset by 'new' charset in 'str'.
@@ -407,7 +412,7 @@ void		ft_strrep_char_inplace(char *str,
 */
 void		ft_strrep_charset_inplace(char *str,
 	char const *old,
-	char const *new);
+	char const *newchar);
 
 /*
 **	Replaces every occurence of the query old by the string new in str.
@@ -415,7 +420,7 @@ void		ft_strrep_charset_inplace(char *str,
 */
 void		ft_strrep_str_inplace(char **a_str,
 	char const *old,
-	char const *new);
+	char const *newstring);
 
 /*
 **	Changes the content of '*a_str' by applying f to each of its chars.
@@ -530,5 +535,9 @@ char	*ft_strmap(char const *str, char (*f)(char));
 **	applying the function 'f' to each of its chars (with index information).
 */
 char	*ft_strmapi(char const *str, char (*f)(t_size, char));
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif

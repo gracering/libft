@@ -14,7 +14,7 @@
 
 
 
-void	ft_memrep(void *ptr, t_u8 old, t_u8 new, t_size n)
+void	ft_memrep(void *ptr, t_u8 old, t_u8 newval, t_size n)
 {
 	t_u8	*result;
 	t_size	i;
@@ -28,7 +28,7 @@ void	ft_memrep(void *ptr, t_u8 old, t_u8 new, t_size n)
 	while (i < n)
 	{
 		if (result[i] == old)
-			result[i] = new;
+			result[i] = newval;
 		++i;
 	}
 }

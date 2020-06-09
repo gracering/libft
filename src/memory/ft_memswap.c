@@ -34,8 +34,8 @@ int			ft_memswap(void *ptr1, void *ptr2, t_size size)
 		return (OK);
 	else if (ptr1 && ptr2)
 	{
-		p1 = ptr1;
-		p2 = ptr2;
+		p1 = (t_u8*)(ptr1);
+		p2 = (t_u8*)(ptr2);
 		i = 0;
 		while (i < size)
 		{
