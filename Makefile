@@ -5,7 +5,7 @@ NAME_TEST	=	libft_test
 # Compiler
 CC	= _
 CC_WIN	= i686-w64-mingw32-gcc
-CC_LIN	= gcc
+CC_LIN	= g++
 CC_MAC	= gcc
 
 # Compiler flags
