@@ -5,11 +5,11 @@ NAME_TEST	=	libft_test
 # Compiler
 CC	= _
 CC_WIN	= i686-w64-mingw32-gcc
-CC_LIN	= g++
+CC_LIN	= gcc
 CC_MAC	= gcc
 
 # Compiler flags
-CFLAGS	=	-Wall -Wextra -Winline $(CFLAGS_PLATFORM) -MMD -O2 
+CFLAGS	=	-Wall -Wextra -Winline $(CFLAGS_PLATFORM) -MMD -O2 -Wpedantic -Werror
 
 CFLAGS_PLATFORM = _
 CFLAGS_WIN	= -mwindows
